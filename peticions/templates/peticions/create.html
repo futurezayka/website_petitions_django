@@ -1,0 +1,20 @@
+{% extends 'mainapp/layout.html' %}
+
+{% block title%}New Petition{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Form for creating new petition</h1>
+        <form method="post">
+            {%csrf_token%}
+            {{ form.title }}<br>
+            {{ form.text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+            <button class = "btn btn-success" type="submit">Submit</button>
+
+        </form>
+
+    </div>
+{% endblock %}
+

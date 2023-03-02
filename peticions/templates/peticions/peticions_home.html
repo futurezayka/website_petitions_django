@@ -1,0 +1,24 @@
+{% extends 'mainapp/layout.html' %}
+
+{% block title%}Petitions{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>All petitions</h1>
+        {% if peticions %}
+            {% for el in peticions %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.text }}</p>
+                    <a href='{% url "detail" el.id %}' class = "btn btn-warning">Read details</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You haven`t created peticitions</p>
+        {% endif %}
+
+
+
+    </div>
+{% endblock %}
+
