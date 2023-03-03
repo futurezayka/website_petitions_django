@@ -8,7 +8,7 @@
         {% if peticions %}
             {% for el in peticions %}
                 <div class="detailed">
-                     <a href='{% url "detail" el.id %}'><h2>{{ el.title }}</h2></a>
+                     <a href='{% url "detail" el.id %}'><h2 style="font-weight: bold">{% filter upper %}{{ el.title }}{% endfilter %}</h2></a>
                      <p>{{ el.text }}</p>
                 </div>
             {% endfor %}
