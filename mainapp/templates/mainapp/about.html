@@ -8,7 +8,7 @@
     <div class="features">
         <h1>About Us</h1>
         <p>We’ve trained a model called ChatGPT which interacts in a conversational way. The dialogue format makes it possible for ChatGPT to answer followup questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests. ChatGPT is a sibling model to InstructGPT, which is trained to follow an instruction in a prompt and provide a detailed response.</p>
-        <a href="{% url "home" %}"><button class = "btn btn-warning">To Home</button></a>
+        <a href="{% url "home" %}"><button type="button" class="btn btn-light">{% filter upper %}To Home{% endfilter %}</button></a>
     </div>
 {% endblock %}
 

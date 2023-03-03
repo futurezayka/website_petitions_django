@@ -1,7 +1,7 @@
 
 body{
 
-	background: linear-gradient(-45deg, #3b1e1e, #541b32, #304b4b, #083a3d);
+	background: linear-gradient(-45deg, #0e5d5b, #820b93, #691010, #450a59);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }
@@ -19,26 +19,27 @@ body{
 }
 
 nav {
-    /*border-left: white solid 5px;*/
-    /*border-right: white solid 5px;*/
     width: 1200px;
     text-align: center;
     float: top;
     margin-left: auto;
     margin-right: auto;
-    padding: 1%;
+    padding: 3%;
     height: 10vh;
-    color: #fff;
-    border-bottom: 5px solid ;
+    border-right: 3px solid rgba(255, 255, 255, 0.55);
+    border-left: 3px solid rgba(255, 255, 255, 0.55);
+    background: rgba(40, 40, 40,0.5);
+}
+nav ul{
+    margin-top: -15px;
 }
 
 
 
-
 nav ul li, nav ul a{
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 40px;
-    color: floralwhite;
+    color: white;
     display: inline-flex;
     transition: transform .6s ease ;
     text-decoration: none;
@@ -56,44 +57,55 @@ nav ul li:hover, nav ul a:hover{
 
 
 main .features {
-    /*border-right: 5px solid;*/
-    /*border-left: 5px solid;*/
-    margin-top: 15px;
+    background: rgba(40, 40, 40,0.5);
+    border-left: 3px solid rgba(255, 255, 255, 0.55);
+    border-right: 3px solid rgba(255, 255, 255, 0.55);
+    border-top: 3px solid rgba(255, 255, 255, 0.55);
     color: white;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     width: 1200px;
     height: 100vh;
-    z-index: 100;
 
 }
-main .features h1 {font-size: 50px}
-main .features p {max-width: 400px; margin: 20px auto}
+
+main .features h1 {
+    font-size: 45px;
+    margin-top: 25px;
+}
+main .features p {
+    max-width: 500px;
+    margin: 20px auto;
+}
 
 
-nav ul a:hover{
+.features .btn-light:hover,.btn-light:hover{
     color: hotpink;
+    transition: transform .6s ease ;
     text-decoration: none;
     transform: scale(1.05);
 }
+.features .btn-light, .btn-light{
+    font-weight: 600;
 
+}
 
-.alert-warning {
-    border: 5px double #ffbd07;
+.detailed {
+    background: #4d004d;
+    border: 5px solid rgba(255, 255, 255, 0.45);
     padding: 10px;
     width: 500px;
+    height: 400px;
     margin: 20px;
     text-align: center;
     display: inline-block;
-    overflow-x: hidden
+    overflow: hidden;
 
 }
 
-nav .btn-warning{
-    color: #000000;
 
-}
+
 form {
     width: 800px;
     position: center;
@@ -106,12 +118,25 @@ form textarea{
     height: 300px;
 }
 
-.positioned {
-    opacity: 20%;
-    position: absolute;
-    height: 100vh;
-    border-radius: 5px;
-    background: #ff66b3;
-    width: 1200px;
-    z-index: 50;
+.btn-success{
+    border-radius: .375rem ;
+    height: 40px;
+    width: 110px;
+    float: right;
+    font-weight: 600;
+    background: #1a4c35;
+    border: 1px solid white;
+}
+.btn-success:hover{
+    font-weight: 600;
+    border: 1px solid white;
+    background: #1a4c35;
+    transition: transform .6s ease;
+    transform: scale(1.06);
+}
+
+.detailed a{
+    text-decoration: none;
+    color: white;
+
 }

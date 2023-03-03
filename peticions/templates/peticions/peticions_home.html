@@ -7,10 +7,9 @@
         <h1>All petitions</h1>
         {% if peticions %}
             {% for el in peticions %}
-                <div class="alert alert-warning">
-                    <h3>{{ el.title }}</h3>
-                    <p>{{ el.text }}</p>
-                    <a href='{% url "detail" el.id %}' class = "btn btn-warning">Read details</a>
+                <div class="detailed">
+                     <a href='{% url "detail" el.id %}'><h2>{{ el.title }}</h2></a>
+                     <p>{{ el.text }}</p>
                 </div>
             {% endfor %}
         {% else %}
