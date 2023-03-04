@@ -105,8 +105,8 @@ main .features {
 .detailed {
     border-radius: 15px;
     background: linear-gradient(-45deg, rgba(24, 7, 42, 0.6), rgba(64, 6, 117, 0.6), rgba(15, 4, 21, 0.6), rgba(35, 1, 37, 0.6));
-	background-size: 400% 400%;
-	animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
     border: 3px solid rgba(255, 255, 255, 0.75);
     padding: 10px;
     width: 500px;
@@ -117,8 +117,6 @@ main .features {
     overflow: hidden;
     font-weight: bold;
 }
-
-
 
 form {
     width: 800px;
@@ -136,7 +134,6 @@ form textarea{
     border-radius: .375rem ;
     height: 40px;
     width: 110px;
-    float: right;
     font-weight: 700;
     background: #1a4c35;
     border: 1px solid white;

@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-6o*dz*5vppw4up*4*0ynhgkc-_i!56ssb74$ks+s*^bm#)ls&k
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = "mainapp.User"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Application definition
@@ -106,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'EN'
 
 TIME_ZONE = 'UTC'
 
