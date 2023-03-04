@@ -4,6 +4,7 @@
 
 {% block content %}
     <div class="features">
+        {% if user.is_authenticated %}
         <h1>Form for creating new petition</h1>
         <form method="post">
             {%csrf_token%}
@@ -12,9 +13,10 @@
             {{ form.date }}<br>
             <span>{{ error }}</span>
             <button class = "btn btn-success" type="submit">SUBMIT</button>
-
         </form>
-
+        {% else %}
+        <h1 style="font-size: 40px">You should log-in first!</h1>
+        {% endif %}
     </div>
 {% endblock %}
 

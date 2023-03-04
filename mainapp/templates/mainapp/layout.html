@@ -11,7 +11,7 @@
 <body>
     <nav class = "menu">
         <ul>
-            <a style="color: white;transform: none">Hello, {% filter title %}{{ request.user.username|default:"Guest"}}{% endfilter %}</a>
+            <a style="color: white;transform: none;float: left;">Hello, {% filter title %}{{ request.user.username|default:"Guest"}}!{% endfilter %}</a>
             <a href="{% url "home" %}"> <li><i class="bi bi-house"></i> Home Page</li></a>
             <a href="{% url "peticions" %}"><li><i class="bi bi-collection"></i> Peticions</li></a>
             <a href="{% url "about" %}"> <li><i class="bi bi-arrow-through-heart-fill"></i> About</li></a>
@@ -21,8 +21,8 @@
             {% if user.is_authenticated %}
                 <a href="{% url 'logout' %}">Logout</a>
             {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url "register" %}">Register</a>
+                <a href="{% url 'login' %}" style="float: right">Login</a>
+                <a href="{% url "register" %}" style="float: right">Register</a>
             {% endif %}
         </ul>
     </nav>

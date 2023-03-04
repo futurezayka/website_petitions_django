@@ -34,6 +34,6 @@ class Register(View):
             login(request, user)
             return redirect('home')
         context = {
-            'form' : form
+            'form': form
         }
-        return render(request,self.template_name, context)
+        return render(request, self.template_name, context)
