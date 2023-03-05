@@ -1,10 +1,16 @@
 
 body{
-    background: -webkit-linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));
-    background: -moz-linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));
-    background: linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));
+    background: #420c5d;
+    /*background: -webkit-linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));*/
+    /*background: -moz-linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));*/
+    /*background: linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));*/
 }
 
+ol,
+ul,
+dl {
+  margin-top: 8px;
+}
 
 @keyframes gradient {
 	0% {
@@ -19,37 +25,35 @@ body{
 }
 
 nav {
-    border-radius: 20px;
+    border-radius: 10px;
     position: sticky;
-    top:0;
-    width: 1500px;
+    top: 0;
+    width: 1200px;
     text-align: center;
     float: top;
     margin-left: auto;
     margin-right: auto;
-    padding: 3%;
+    padding: 1%;
     height: 10vh;
-    border:3px solid rgba(255, 255, 255, 0.75);
+    border: 3px solid rgba(255, 255, 255, 0.75);
     background: rgba(45, 1, 67, 0.8);
 }
-nav ul{
-    margin-top: -15px;
-}
-
 
 
 nav ul li, nav ul a{
     font-weight: bold;
-    font-size: 25px;
-    margin-left: 40px;
+    font-size: 20px;
+    margin-left: 35px;
     color: white;
     display: inline-flex;
     transition: transform .6s ease ;
     text-decoration: none;
+    margin-top: 0;
+    margin-bottom:0;
 
 }
 nav ul li:hover, nav ul a:hover{
-    color: #0db9b9;
+    color: #ad71c2;
     font-weight: bold;
     text-decoration: none;
     transform: scale(1.10);
@@ -57,36 +61,35 @@ nav ul li:hover, nav ul a:hover{
 
 
 
-
 main .features {
-    border-radius: 20px;
+    /*border-radius: 20px;*/
     background: rgba(3, 0, 0, 0.4);
-    border-left: 3px solid rgba(255, 255, 255, 0.75);
-    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    /*border-left: 3px solid rgba(255, 255, 255, 0.75);*/
+    /*border-right: 3px solid rgba(255, 255, 255, 0.75);*/
     color: white;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 1500px;
+    width: 1200px;
     min-height: 100vh;
     max-height: 100%;
 
 }
 .features h1 {
-    font-size: 50px;
+    font-size: 40px;
     padding: 20px;
     font-weight: bolder;
 }
 .features p {
     font-size: 20px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
 }
 
 
 .features .btn-light:hover,.btn-light:hover{
     color: #ffffff;
-    background: #0db9b9;
+    background: #8a0dcc;
     transition: transform .6s ease ;
     text-decoration: none;
     transform: scale(1.10);
@@ -102,13 +105,13 @@ main .features {
 
 .detailed {
     border-radius: 15px;
-    background: linear-gradient(-45deg, rgba(24, 7, 42, 0.6), rgba(64, 6, 117, 0.6), rgba(15, 4, 21, 0.6), rgba(35, 1, 37, 0.6));
+    background: linear-gradient(-45deg, rgba(24, 7, 42, 0.6), rgba(64, 6, 117, 0.6), rgba(39, 9, 54, 0.6), rgba(35, 1, 37, 0.6));
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
     border: 3px solid rgba(255, 255, 255, 0.75);
     padding: 10px;
-    width: 600px;
-    height: 450px;
+    width: 500px;
+    height: 400px;
     margin: 20px;
     text-align: center;
     display: inline-block;
@@ -135,6 +138,7 @@ form textarea{
     font-weight: 700;
     background: #1a4c35;
     border: 1px solid white;
+
 }
 .btn-success:hover{
     font-weight: 700;
@@ -149,12 +153,13 @@ form textarea{
     color: white;
 }
 
-.detailed p{font-size: 17px;}
+.detailed p{font-size: 15px;}
+.detailed h2{font-size: 25px}
 .detailed h2:hover{
     transition: transform .6s ease ;
     text-decoration: none;
     transform: scale(1.15);
-    color: #0db9b9;
+    color: #8a0dcc;
 
 }
 table {
@@ -163,5 +168,5 @@ table {
     font-size: 20px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 5%;
+    margin-top: 0;
 }
