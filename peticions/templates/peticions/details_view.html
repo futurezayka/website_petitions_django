@@ -1,14 +1,14 @@
 {% extends 'mainapp/layout.html' %}
 
 {% block title%}{{ peticion.title }}{% endblock %}
-
 {% block content %}
     <div class="features">
         <h1>{{ peticion.title }}</h1>
-        <p>{{ peticion.date }}</p>
+        <p style="font-size: 35px; margin-bottom: 15px">by {{ peticion.name_surname }}</p>
+        <p style="margin-bottom: 15px">Published {{ peticion.date }}</p>
         <p>{{ peticion.text }}</p>
-        <a href="{% url "delete" peticion.id %}" class = "btn btn-warning">Delete</a>
-        <a href="{% url "edit" peticion.id %}" class = "btn btn-info">Edit</a>
+        <a style="font-size: 19px;font-weight: bold;margin-top: 40px;width: 150px;margin-left: 40px;margin-bottom: 50px" type="submit" class = "btn btn-warning" href="{% url "delete-item" peticion.id %}">Delete</a>
+        <a style="font-size: 19px;font-weight: bold;margin-top: 40px;width: 150px;margin-left: 40px;margin-bottom: 50px" href="{% url "edit" peticion.id %}" class = "btn btn-info">Edit</a>
+        <button style="font-size: 19px;font-weight: bold;margin-top: 40px;width: 150px;margin-left: 40px;margin-bottom: 50px;background: lime; border: lime" type="submit" class="btn btn-info">Vote</button>
     </div>
 {% endblock %}
-

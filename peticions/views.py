@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Peticions
 from .forms import PeticionsForm
-from django.views.generic import DetailView, UpdateView, DeleteView
+from django.views.generic import DetailView, UpdateView
 
 
 
@@ -21,11 +21,13 @@ class PeticionUpdateView(UpdateView):
     template_name = 'peticions/create.html'
     form_class = PeticionsForm
 
-class PeticionDeleteView(DeleteView):
-    model = Peticions
-    template_name = 'peticions/delete_petition.html'
-    success_url = '/petitions/'
+def deleteItem(request, id):
+    item = Peticions.objects.get(id=id)
+    item.delete()
+    return redirect('/petitions')
 
+def get_absolute_url(self):
+    return '{self.path}'
 
 def create(request):
     error = ""
@@ -43,4 +45,4 @@ def create(request):
         'form': form,
         'error': error
     }
-    return render(request, 'peticions/create.html',data)
+    return render(request, 'peticions/create.html', data)

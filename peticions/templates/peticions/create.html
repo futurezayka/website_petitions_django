@@ -8,6 +8,7 @@
         <h1>Form for creating new petition</h1>
         <form method="post">
             {%csrf_token%}
+            {{ form.name_surname }}<br>
             {{ form.title }}<br>
             {{ form.text }}<br>
             {{ form.date }}<br>

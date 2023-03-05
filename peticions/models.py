@@ -7,7 +7,7 @@ class Peticions(models.Model):
     title = models.CharField('Name', max_length=50)
     text = models.TextField('Text')
     date = models.DateTimeField('Date of creating')
-
+    name_surname = models.TextField("name_surname")
     def __str__(self):
         return self.title
 
@@ -18,6 +18,4 @@ class Peticions(models.Model):
     class Meta:
         verbose_name = "Petition"
         verbose_name_plural = "Petitions"
-
-
 

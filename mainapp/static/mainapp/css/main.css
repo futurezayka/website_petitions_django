@@ -79,7 +79,7 @@ main .features {
 }
 .features p {
     font-size: 20px;
-    max-width: 500px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -107,7 +107,7 @@ main .features {
     animation: gradient 20s ease infinite;
     border: 3px solid rgba(255, 255, 255, 0.75);
     padding: 10px;
-    width: 500px;
+    width: 600px;
     height: 450px;
     margin: 20px;
     text-align: center;
