@@ -6,6 +6,7 @@ from mainapp.models import User
 # Create your models here.
 
 class Peticions(models.Model):
+    creator = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField('Name', max_length=50)
     text = models.TextField('Text')
     date = models.DateTimeField(auto_now=True)

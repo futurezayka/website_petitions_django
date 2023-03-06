@@ -29,13 +29,20 @@ def deleteItem(request, id):
     return redirect('/petitions')
 
 def get_absolute_url(self):
-    return '{self.path}'
+    return {self.path}
+
+
+def get_initial(self):
+    return {{self.user}}
+
 
 def create(request):
     error = ""
     if request.method == 'POST':
         form = PeticionsForm(request.POST)
         if form.is_valid():
+            form.save(commit=False)
+            form.instance.creator = request.user
             form.save()
             return redirect('/petitions')
         else:

@@ -1,5 +1,7 @@
+from django.contrib.auth import get_user_model
+
 from .models import Peticions
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
+from django.forms import ModelForm, TextInput, Textarea, ModelChoiceField, HiddenInput
 
 
 class PeticionsForm(ModelForm):
