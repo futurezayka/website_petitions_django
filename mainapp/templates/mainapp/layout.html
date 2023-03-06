@@ -11,7 +11,7 @@
 <body>
     <nav class = "menu">
         <ul>
-            <a style="font-size: 22px;color: white;transform: none;float: left">Hello, {% filter title %}{{ request.user.username|default:"Guest"}}!{% endfilter %}</a>
+            <a style="font-size: 20px;color: white;transform: none;float: left">Hello, {% filter title %}{{ request.user.username|default:"Guest"}}!{% endfilter %}</a>
             <a href="{% url "home" %}"> <li><i class="bi bi-house"></i> Home Page</li></a>
             <a href="{% url "peticions" %}"><li><i class="bi bi-collection"></i> Petitions</li></a>
             <a href="{% url "about" %}"> <li><i class="bi bi-arrow-through-heart-fill"></i> About</li></a>

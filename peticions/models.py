@@ -1,12 +1,14 @@
 from django.db import models
 
+from mainapp.models import User
+
 
 # Create your models here.
 
 class Peticions(models.Model):
     title = models.CharField('Name', max_length=50)
     text = models.TextField('Text')
-    date = models.DateTimeField('Date of creating')
+    date = models.DateTimeField(auto_now=True)
     name_surname = models.TextField("name_surname")
     def __str__(self):
         return self.title

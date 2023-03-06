@@ -3,9 +3,10 @@ from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 
 
 class PeticionsForm(ModelForm):
+
     class Meta:
         model = Peticions
-        fields = ['title', 'text', 'date', "name_surname"]
+        fields = ['title', 'text', "name_surname"]
         widgets = {
             "name_surname": TextInput(attrs={
                 'class': 'form-control',
@@ -19,12 +20,6 @@ class PeticionsForm(ModelForm):
             "text": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Text of your petition'
-            }),
-            "date": DateTimeInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Date of creating'
-
             })
-
 
         }

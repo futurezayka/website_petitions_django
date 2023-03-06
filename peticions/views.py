@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Peticions
 from .forms import PeticionsForm
 from django.views.generic import DetailView, UpdateView
-
+from mainapp.models import User
 
 
 
@@ -16,10 +16,12 @@ class PeticionsDetailView(DetailView):
     template_name = 'peticions/details_view.html'
     context_object_name = 'peticion'
 
+
 class PeticionUpdateView(UpdateView):
     model = Peticions
     template_name = 'peticions/create.html'
     form_class = PeticionsForm
+
 
 def deleteItem(request, id):
     item = Peticions.objects.get(id=id)

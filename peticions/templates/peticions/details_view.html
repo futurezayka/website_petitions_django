@@ -5,7 +5,7 @@
     <div class="features">
         <h1 style="padding: 20px;margin-bottom: -5px;">{{ peticion.title }}</h1>
         <p style="font-size: 35px; margin-bottom: 15px">by {{ peticion.name_surname }}</p>
-        <p style="margin-bottom: 15px">Published {{ peticion.date }}</p>
+        <p style="margin-bottom: 15px">Published {{peticion.date}}</p>
         <p>{{ peticion.text }}</p>
         <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px" type="submit" class = "btn btn-warning" href="{% url "delete-item" peticion.id %}">Delete</a>
         <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px" href="{% url "edit" peticion.id %}" class = "btn btn-info">Edit</a>
