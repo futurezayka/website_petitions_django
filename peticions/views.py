@@ -19,7 +19,7 @@ class PeticionsDetailView(DetailView):
 
 class PeticionUpdateView(UpdateView):
     model = Peticions
-    template_name = 'peticions/create.html'
+    template_name = 'peticions/edit.html'
     form_class = PeticionsForm
 
 
@@ -55,3 +55,4 @@ def create(request):
         'error': error
     }
     return render(request, 'peticions/create.html', data)
+

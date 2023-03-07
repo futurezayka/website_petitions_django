@@ -7,9 +7,15 @@
         <p style="font-size: 35px; margin-bottom: 15px">by {{ peticion.name_surname }}</p>
         <p style="margin-bottom: 15px">Published {{peticion.date}}</p>
         <p>{{ peticion.text }}</p>
-        <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px" type="submit" class = "btn btn-warning" href="{% url "delete-item" peticion.id %}">Delete</a>
-        <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px" href="{% url "edit" peticion.id %}" class = "btn btn-info">Edit</a>
-        <button style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px;background: lime; border: lime" type="submit" class="btn btn-info">Vote</button>
+        {% if peticion.creator == user%}
+            <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px" type="submit" class = "btn btn-warning" href="{% url "delete-item" peticion.id %}">Delete</a>
+            <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px" href="{% url "edit" peticion.id %}" class = "btn btn-info">Edit</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <button style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px;background: lime; border: lime" type="submit" class="btn btn-info">Vote</button>
+        {% else %}
+            <a style="font-weight: bold;font-size: 20px ">Log-in to vote!</a>
+        {% endif %}
         <button id="copy-button" class="btn btn-light" onclick="copyText()" style="font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px">Share link</button>
         <a style="font-size: 0;height: 0;width: 0" class = "copy-text-area" id="copy-text">http://127.0.0.1:8000{{peticion.get_absolute_url}}</a>
     </div>
