@@ -1,9 +1,6 @@
 
 body{
     background: #420c5d;
-    /*background: -webkit-linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));*/
-    /*background: -moz-linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));*/
-    /*background: linear-gradient(180deg, rgb(82, 0, 122), rgb(30, 12, 56), rgb(43, 27, 59));*/
 }
 
 ol,
@@ -56,12 +53,12 @@ nav ul li:hover, nav ul a:hover{
     color: #ad71c2;
     font-weight: bold;
     text-decoration: none;
-    transform: scale(1.10);
+    transform: scale(1.05);
 }
 
 
 
-main .features {
+.features {
     /*border-radius: 20px;*/
     background: rgba(3, 0, 0, 0.4);
     /*border-left: 3px solid rgba(255, 255, 255, 0.75);*/
@@ -71,7 +68,7 @@ main .features {
     margin-right: auto;
     text-align: center;
     width: 1200px;
-    min-height: 100vh;
+    min-height: 90vh;
     max-height: 100%;
 
 }
@@ -92,7 +89,7 @@ main .features {
     background: #8a0dcc;
     transition: transform .6s ease ;
     text-decoration: none;
-    transform: scale(1.10);
+    transform: scale(1.05);
     border-radius: 15px;
 }
 .features .btn-light, .btn-light{
@@ -169,4 +166,54 @@ table {
     margin-right: auto;
     margin-left: auto;
     margin-top: 0;
+}
+
+.btn-info {
+    position: relative;
+}
+
+.btn-info  .popuptext{
+    font-weight: normal;
+    visibility: hidden;
+    width: 350px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    margin-left: -190px;
+}
+
+.btn-info  .popuptext::after {
+    width: auto;
+    display: inline-flex;
+    font-weight: normal;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+.btn-info  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }
