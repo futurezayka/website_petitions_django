@@ -9,25 +9,29 @@
         <p style="font-weight: bold;margin-bottom: 15px ">Votes for this petition : {{ peticion.vote_count }}</p>
         <p>{{ peticion.text }}</p>
         <div>{% if peticion.creator == user %}
-            <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px"
+            <a style="border: 3px solid white;font-weight: 600;border-radius: 15px;font-size: 18px;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px"
                type="submit" class="btn btn-warning" href="{% url "delete-item" peticion.id %}">Delete</a>
-            <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px"
+            <a style="border: 3px solid white;font-weight: 600;border-radius: 15px;font-size: 18px;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px"
                href="{% url "edit" peticion.id %}" class="btn btn-info">Edit</a>
         {% endif %}
             {% if user.is_authenticated %}
-                <a style="border-radius: 15px;font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px;background: lime; border: lime"
-                   type="submit" href="{% url "vote" peticion.id %}" class="btn btn-info">Vote</a>
+                <a class="btn btn-info" onclick="myFunction()"
+                   style="border-radius: 15px;font-size: 18px;font-weight: 600;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px;background: #2b852b; border: 3px solid white;">Vote
+                    <span class="popuptext" id="myPopup"></span>
+                </a>
+
             {% else %}
-                <a style="font-weight: bold;font-size: 20px ">Log-in to vote!</a>
+                <a style="font-size: 20px ">Log-in to vote!</a>
             {% endif %}
             <button id="copy-button" class="btn btn-light" onclick="copyText()"
-                    style="font-size: 18px;font-weight: bold;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px">
+                    style="border: 3px solid #ad71c2;font-size: 18px;margin-top: 40px;width: 120px;margin-left: 40px;margin-bottom: 50px">
                 Share link
             </button>
             <a style="font-size: 0;height: 0;width: 0" class="copy-text-area"
                id="copy-text">http://127.0.0.1:8000{{ peticion.get_absolute_url }}</a>
         </div>
     </div>
+
 
     <script>
         function copyText() {
@@ -38,6 +42,22 @@
             tempInput.select();
             document.execCommand("copy");
             document.body.removeChild(tempInput);
+        }
+
+        async function myFunction() {
+            console.log("1111")
+            let response = await fetch("{% url "vote" peticion.id %}");
+            let json
+            if (response.ok) {
+                json = await response.json();
+            } else {
+                alert("Ошибка HTTP: " + response.status);
+            }
+            console.log(json)
+            let statusElement = document.querySelector("#myPopup");
+            statusElement.innerHTML = json.message;
+            let popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
         }
     </script>
 
