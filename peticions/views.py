@@ -1,10 +1,9 @@
+
 from django.shortcuts import render, redirect
-from .models import Peticions
+from .models import Peticions, Vote
 from .forms import PeticionsForm
 from django.views.generic import DetailView, UpdateView
-from mainapp.models import User
-
-
+from django.http import JsonResponse
 
 def petitions(request):
     petition = Peticions.objects.order_by("-date")
@@ -34,6 +33,27 @@ def get_absolute_url(self):
 
 def get_initial(self):
     return {{self.user}}
+
+
+
+def vote_petition(request, id):
+    petition = Peticions.objects.get(id=id)
+    user = request.user
+    # Check if user has already voted
+    if Vote.objects.filter(petition=petition, user=user).exists():
+        return JsonResponse({'status': 'error', 'message': 'You have already voted on this petition.'})
+
+    # Create new vote object
+    vote = Vote(petition=petition, user=user)
+    vote.save()
+
+    # Update petition's vote count
+    petition.vote_count += 1
+    petition.save()
+
+    return JsonResponse({'status': 'success', 'message': 'Your vote has been recorded.'})
+
+
 
 
 def create(request):
