@@ -5,7 +5,7 @@
     <div class="features">
         <h1 style="padding: 20px;margin-bottom: -5px;">{{ peticion.title }}</h1>
         <p style="font-size: 30px; margin-bottom: 15px">by {{ peticion.name_surname }}</p>
-        <p style="margin-bottom: 15px">Published {{ peticion.date }}</p>
+        <p style="margin-bottom: 15px">Published {{ peticion.date|date:'d.m.Y H:i:s' }}</p>
         <p style="font-weight: bold;margin-bottom: 15px ">Votes for this petition : {{ peticion.vote_count }}</p>
         <p>{{ peticion.text }}</p>
         <div>{% if peticion.creator == user %}
