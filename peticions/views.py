@@ -1,9 +1,9 @@
-
 from django.shortcuts import render, redirect
 from .models import Peticions, Vote
 from .forms import PeticionsForm
 from django.views.generic import DetailView, UpdateView
 from django.http import JsonResponse
+
 
 def petitions(request):
     petition = Peticions.objects.order_by("-date")
@@ -27,13 +27,13 @@ def deleteItem(request, id):
     item.delete()
     return redirect('/petitions')
 
+
 def get_absolute_url(self):
     return {self.path}
 
 
 def get_initial(self):
     return {{self.user}}
-
 
 
 def vote_petition(request, id):
@@ -44,7 +44,7 @@ def vote_petition(request, id):
         return JsonResponse({'status': 'error', 'message': 'You have already voted on this petition.'})
 
     # Create new vote object
-    vote = Vote(petition=petition, user=user)
+    vote = Vote(petition=petition, user=user, name=f"Pet_id: {petition.id} -- User_id: {user.id}")
     vote.save()
 
     # Update petition's vote count
@@ -52,8 +52,6 @@ def vote_petition(request, id):
     petition.save()
 
     return JsonResponse({'status': 'success', 'message': 'Your vote has been recorded.'})
-
-
 
 
 def create(request):
@@ -75,4 +73,3 @@ def create(request):
         'error': error
     }
     return render(request, 'peticions/create.html', data)
-

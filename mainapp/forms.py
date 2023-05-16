@@ -7,7 +7,6 @@ User = get_user_model()
 
 
 class UserCreationForm(UserCreationForm):
-
     email = forms.EmailField(
         label=_("Email"),
         max_length=254,

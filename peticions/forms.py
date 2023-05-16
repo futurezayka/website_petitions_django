@@ -5,7 +5,6 @@ from django.forms import ModelForm, TextInput, Textarea
 
 
 class PeticionsForm(ModelForm):
-
     class Meta:
         model = Peticions
         fields = ['title', 'text', "name_surname"]

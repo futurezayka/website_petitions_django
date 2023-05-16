@@ -14,7 +14,6 @@ def about_us(request):
 
 
 class Register(View):
-
     template_name = 'registration/register.html'
 
     def get(self, request):
@@ -30,7 +29,7 @@ class Register(View):
             form.save()
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password1")
-            user = authenticate(username = username, password = password)
+            user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('home')
         context = {

@@ -25,8 +25,12 @@ class Peticions(models.Model):
 
 
 class Vote(models.Model):
+    name = models.CharField(max_length=150)
     petition = models.ForeignKey(Peticions, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         unique_together = (('petition', 'user'),)

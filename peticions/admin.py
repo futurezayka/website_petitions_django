@@ -1,4 +1,12 @@
 from django.contrib import admin
-from .models import Peticions
+from .models import Peticions, Vote
 
-admin.site.register(Peticions)
+
+@admin.register(Peticions)
+class PetitionsAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Vote)
+class VoteAdmin(admin.ModelAdmin):
+    pass
